@@ -2,7 +2,7 @@ import streamlit as st
 import os
 from PIL import Image
 from rag import process_pdf, create_rag_chain, extract_text_from_image, answer_question_from_text
-
+# make sure to chnage the path 
 UPLOAD_FOLDER = "Users/Sabothneen/AANLP/uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
@@ -10,7 +10,7 @@ st.title("📄 AI Document Assistant + OCR 📸")
 
 tab1, tab2 = st.tabs(["📂 Ask Questions (RAG)", "📸 Extract Text & Ask Questions"])
 
-# ✅ Tab 1: Upload PDF and Ask Questions
+#  Tab 1: Upload PDF and Ask Questions
 with tab1:
     st.subheader("📂 Upload and Ask Questions About a PDF")
     
@@ -44,7 +44,7 @@ with tab1:
                 else:
                     st.warning("⚠️ Please enter a question.")
 
-# ✅ Tab 2: Upload Image, Extract Text, and Ask Questions
+#  Tab 2: Upload Image, Extract Text, and Ask Questions
 with tab2:
     st.subheader("📸 Upload an Image to Extract Text & Ask Questions")
 
