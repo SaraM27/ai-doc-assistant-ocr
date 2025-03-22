@@ -9,11 +9,11 @@ from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 from langchain.prompts import PromptTemplate
 from langchain_community.llms import Ollama
-
+# make sure to chnage the path
 UPLOAD_FOLDER = "Users/Sabothneen/AANLP/uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-# ✅ Setup Gemini API
+#  Setup Gemini API
 def setup_gemini():
     """Configures Gemini API using environment variable"""
     api_key = os.getenv("GEMINI_API_KEY")
@@ -23,7 +23,7 @@ def setup_gemini():
     genai.configure(api_key=api_key)
     return genai.GenerativeModel('gemini-2.0-flash')
 
-# ✅ Extract Text from Image using Gemini
+#  Extract Text from Image using Gemini
 def extract_text_from_image(image_path):
     """Extracts text from an image using Google Gemini API (gemini-2.0-flash)"""
     try:
@@ -35,7 +35,7 @@ def extract_text_from_image(image_path):
     except Exception as e:
         return f"❌ OCR Error: {str(e)}"
 
-# ✅ Answer Questions Based on Extracted Text
+# Answer Questions Based on Extracted Text
 def answer_question_from_text(extracted_text, question):
     """Uses Gemini to answer a question based on extracted text"""
     try:
@@ -46,7 +46,7 @@ def answer_question_from_text(extracted_text, question):
     except Exception as e:
         return f"❌ Error: {str(e)}"
 
-# ✅ Process PDF and Create Vectorstore
+#  Process PDF and Create Vectorstore
 def process_pdf(pdf_path):
     """Processes and indexes a PDF file"""
     loader = PyPDFLoader(pdf_path)
@@ -64,7 +64,7 @@ def process_pdf(pdf_path):
     vectorstore = FAISS.from_documents(splits, embeddings)
     return vectorstore, None
 
-# ✅ Create RAG Pipeline for PDF Question Answering
+#  Create RAG Pipeline for PDF Question Answering
 def create_rag_chain(vectorstore):
     """Creates a RAG-based retrieval system"""
     retriever = vectorstore.as_retriever(search_kwargs={"k": 7}) 
