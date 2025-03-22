@@ -1,24 +1,26 @@
 📄 AI Document Assistant + OCR
 
-This project provides a smart assistant for interacting with document files (PDF) and images using modern NLP techniques.
+This project provides a smart assistant for interacting with document files (PDF) and images using modern NLP techniques.  
+It supports real-time question answering on both PDF content and extracted image text (Arabic & English).
 
 ---
 
 🚀 Features
 
-🖼 OCR from Images: Uses Google Gemini Flash 2.0 API to extract text from image files.  
+📸 OCR from Images: Uses Google Gemini Flash 2.0 API to extract text from image files.  
+❓ OCR QA: After extracting the text from images, users can ask questions based on the extracted text using Gemini API.  
 📄 PDF QA with RAG: Asks questions on uploaded PDF documents using Retrieval-Augmented Generation (RAG).  
 🤖 Multilingual Support: Works with Arabic and English documents.  
-🔒 Runs Locally: No cloud model training required, secure on-premise LLMs.
+🔒 Secure On-Premise: The RAG pipeline (PDF QA) runs locally using on-premise LLMs like LLaMA3.2-Vision.
 
 ---
 
 🔧 Tech Stack
 
-OCR API: Google Gemini Flash 2.0  
-RAG Pipeline: Built with LangChain, FAISS, and LLaMA3.2-Vision (via Ollama).  
-Embeddings: MiniLM model via all-minilm for semantic retrieval.  
-Frontend: Interactive UI powered by Streamlit.
+OCR & Image QA: Google Gemini Flash 2.0  
+RAG Pipeline: LangChain + FAISS + LLaMA3.2-Vision (via Ollama)  
+Embeddings: all-minilm (MiniLM) via Ollama for semantic vector search  
+Frontend: Streamlit (real-time web UI)
 
 ---
 
