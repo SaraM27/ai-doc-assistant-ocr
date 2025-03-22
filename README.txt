@@ -1,21 +1,40 @@
- 🤖 AI Document Assistant + OCR
+📄 AI Document Assistant + OCR
 
-📚 مشروع تفاعلي باستخدام الذكاء الاصطناعي لفهم الوثائق (PDF) والصور (OCR) باللغتين العربية والإنجليزية.
+This project provides a smart assistant for interacting with document files (PDF) and images using modern NLP techniques.
 
- 🎯 الفكرة
-نظام يجمع بين:
-- ✅ استخراج النصوص من الصور باستخدام Google Gemini API.
-- ✅ الإجابة عن الأسئلة بناءً على محتوى ملفات PDF أو الصور باستخدام RAG (استرجاع + توليد).
-- ✅ دعم كامل للغة العربية والإنجليزية.
+---
 
- 🧠 المعمارية المستخدمة
-- RAG: باستخدام LangChain + FAISS + LLaMA3.2-Vision (عبر Ollama).
-- OCR: باستخدام Gemini Flash 2.0 لاستخراج النص من الصور.
-- LLMs & Embeddings: `llama3.2-vision` و `all-minilm`
-- واجهة المستخدم: Streamlit باستخدام
+🚀 Features
 
- 🛠️ المتطلبات
-ثبت جميع المكتبات باستخدام:
+🖼 OCR from Images: Uses Google Gemini Flash 2.0 API to extract text from image files.  
+📄 PDF QA with RAG: Asks questions on uploaded PDF documents using Retrieval-Augmented Generation (RAG).  
+🤖 Multilingual Support: Works with Arabic and English documents.  
+🔒 Runs Locally: No cloud model training required, secure on-premise LLMs.
+
+---
+
+🔧 Tech Stack
+
+OCR API: Google Gemini Flash 2.0  
+RAG Pipeline: Built with LangChain, FAISS, and LLaMA3.2-Vision (via Ollama).  
+Embeddings: MiniLM model via all-minilm for semantic retrieval.  
+Frontend: Interactive UI powered by Streamlit.
+
+---
+
+📁 Project Structure
+
+📁 ai-doc-assistant-ocr  
+│  
+├── app.py  
+├── rag.py  
+├── requirements.txt  
+├── README.md ← this file  
+└── uploads/   ← folder to store uploaded PDFs and images  
+
+---
+
+🧪 Installation
 
 ```bash
 pip install -r requirements.txt
